@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="cloud-api-common" />
+        <module name="cloud-eureka-server7001" />
+        <module name="cloud-eureka-server7002" />
+        <module name="eureka" />
+        <module name="order80" />
+        <module name="payment8001" />
+        <module name="rabbitMq" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="cloud-api-common" target="1.8" />
+      <module name="cloud-eureka-server7001" target="1.8" />
+      <module name="cloud-eureka-server7001 (1)" target="1.8" />
+      <module name="cloud-eureka-server7002" target="1.8" />
+      <module name="eureka" target="1.8" />
+      <module name="order80" target="1.8" />
+      <module name="payment" target="1.8" />
+      <module name="payment8001" target="1.8" />
+      <module name="rabbitMq" target="1.8" />
+      <module name="scpractice" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="payment" options="-parameters" />
+      <module name="scpractice" options="" />
+    </option>
+  </component>
+</project>

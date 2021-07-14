@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/cloud-api-common/cloud-api-common.iml" filepath="$PROJECT_DIR$/cloud-api-common/cloud-api-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-eureka-server7001/cloud-eureka-server7001.iml" filepath="$PROJECT_DIR$/cloud-eureka-server7001/cloud-eureka-server7001.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-eureka-server7002/cloud-eureka-server7002.iml" filepath="$PROJECT_DIR$/cloud-eureka-server7002/cloud-eureka-server7002.iml" />
+      <module fileurl="file://$PROJECT_DIR$/order80/order80.iml" filepath="$PROJECT_DIR$/order80/order80.iml" />
+      <module fileurl="file://$PROJECT_DIR$/payment8001/payment8001.iml" filepath="$PROJECT_DIR$/payment8001/payment8001.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rabbitMq/rabbitMq.iml" filepath="$PROJECT_DIR$/rabbitMq/rabbitMq.iml" />
+      <module fileurl="file://$PROJECT_DIR$/scpractice.iml" filepath="$PROJECT_DIR$/scpractice.iml" />
+    </modules>
+  </component>
+</project>
