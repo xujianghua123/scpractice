@@ -23,7 +23,14 @@ public class OrderController {
 
     @GetMapping("/consumer/payment/create")
     public CommonResult<Payment> create(Payment payment){
-        log.info("11111111111111");
+        log.info("111111111");
+        if(!payment.getPayFlag()){
+            log.info("payFlag == false");
+            payment.setPayFlag(Boolean.TRUE);
+        }
+        if(payment.getPayFlag()){
+            log.info("payFlag == true");
+        }
         return restTemplate.postForObject(PAYMENT_URL+"/payment/create",payment, CommonResult.class);
     }
 
