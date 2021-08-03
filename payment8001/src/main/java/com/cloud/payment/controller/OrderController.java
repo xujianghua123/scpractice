@@ -1,6 +1,7 @@
 package com.cloud.payment.controller;
 
 import com.cloud.common.api.CommonResult;
+import com.cloud.common.entities.Order;
 import com.cloud.common.entities.Payment;
 import com.cloud.payment.service.PaymentService;
 import lombok.extern.slf4j.Slf4j;
@@ -14,15 +15,15 @@ import java.util.Objects;
 
 @RestController
 @Slf4j
-public class PaymentController {
+public class OrderController {
 
     @Resource
     private PaymentService paymentService;
 
-    @PostMapping(value = "/payment/create")
-    public CommonResult create(Payment payment){
-        int result = paymentService.create(payment);
-//        int result = 1;
+    @PostMapping(value = "/order/create")
+    public CommonResult create(Order order){
+//        int result = paymentService.create(payment);
+        int result = 1;
         log.info("插入结果="+result);
 
         if (result > 0){
@@ -33,10 +34,10 @@ public class PaymentController {
     }
 
 
-    @GetMapping(value = "/payment/get/{id}")
+    @GetMapping(value = "/order/get/{id}")
     public CommonResult getPaymentById(@PathVariable("id") Long id){
-        Payment payment = paymentService.getPaymentById(id);
-//        Payment payment = initPayment(id);
+//        Payment payment = paymentService.getPaymentById(id);
+        Payment payment = initPayment(id);
         log.info("查询结果="+payment);
 
         if (Objects.nonNull(payment)){

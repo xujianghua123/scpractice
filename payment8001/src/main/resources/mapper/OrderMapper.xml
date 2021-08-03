@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cloud.payment.dao.OrderDao">
+
+
+    <resultMap id="BaseResultMap" type="com.cloud.common.entities.Order" >
+        <result column="id" property="id" />
+        <result column="order_no" property="orderNo" />
+        <result column="price" property="price" />
+        <result column="quantity" property="quantity" />
+        <result column="order_time" property="orderTime" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,
+        order_no,
+        price,
+        quantity,
+        order_time
+    </sql>
+
+    <insert id="create" useGeneratedKeys="true" keyColumn="id" keyProperty="id" parameterType="com.cloud.common.entities.Order">
+        INSERT INTO `order`
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="null != orderNo and '' != orderNo">
+                order_no,
+            </if>
+            <if test="null != price and '' != price">
+                price,
+            </if>
+            <if test="null != quantity">
+                quantity,
+            </if>
+                order_time
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="null != orderNo and '' != orderNo">
+                #{orderNo},
+            </if>
+            <if test="null != price and '' != price">
+                #{price},
+            </if>
+            <if test="null != quantity">
+                #{quantity},
+            </if>
+                now()
+        </trim>
+    </insert>
+
+    <delete id="delete" >
+        DELETE FROM order
+        WHERE id = #{id}
+    </delete>
+
+    <update id="update" parameterType="com.cloud.common.entities.Order">
+        UPDATE order
+        <set>
+            <if test="null != orderNo and '' != orderNo">order_no = #{orderNo},</if>
+            <if test="null != price and '' != price">price = #{price},</if>
+            <if test="null != quantity and '' != quantity">quantity = #{quantity},</if>
+            <if test="null != orderTime and '' != orderTime">order_time = #{orderTime}</if>
+        </set>
+        WHERE id = #{id}
+    </update>
+
+
+    <select id="load" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List" />
+        FROM order
+        WHERE id = #{id}
+    </select>
+
+    <select id="pageList" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List" />
+        FROM order
+        LIMIT #{offset}, #{pageSize}
+    </select>
+
+    <select id="pageListCount" resultType="java.lang.Integer">
+        SELECT count(1)
+        FROM order
+    </select>
+
+</mapper>

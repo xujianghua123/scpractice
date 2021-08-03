@@ -6,15 +6,20 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.Date;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Payment implements Serializable {
+public class Order implements Serializable {
 
     private Long id;
 
-    private String serial;
+    private String orderNo;
+    
+    private BigDecimal price;
 
-    private Boolean payFlag = Boolean.FALSE;
+    private Integer quantity;
+
+    private Date orderTime;
 }

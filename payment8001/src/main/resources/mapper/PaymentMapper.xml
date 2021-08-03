@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.cloud.common.entities.Payment">
+<mapper namespace="com.cloud.payment.dao.PaymentDao">
 
-    <insert id="create" parameterType="Payment" useGeneratedKeys="true" keyProperty="id">
-        insert into payment (serial) values (${serial});
+    <insert id="create" useGeneratedKeys="true" keyColumn="id" keyProperty="id" parameterType="com.cloud.common.entities.Payment">
+        insert into payment (serial) values (#{serial});
     </insert>
 
     <resultMap id="BaseResultMap" type="com.cloud.common.entities.Payment">
