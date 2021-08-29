@@ -5,7 +5,7 @@ import java.util.*;
 public class FindSecondMinimumValue {
 
     public int findSecondMinimumValue(TreeNode root) {
-        Set<Integer> nodeSet = this.nodeList(root, new HashSet<>());
+        Set<Integer> nodeSet = this.nodeList(root, new HashSet<Integer>());
         ArrayList<Integer> nodes = new ArrayList<>(nodeSet);
         Collections.sort(nodes);
         if(nodeSet.size() < 2){
