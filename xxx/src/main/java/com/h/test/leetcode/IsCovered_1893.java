@@ -16,20 +16,19 @@ public class IsCovered_1893 {
     public boolean isCovered(int[][] ranges, int left, int right) {
 
         boolean isStart = false;
-//        Arrays.sort(ranges,new Comparator<int[]>(){
-//            @Override
-//            public int compare(int[] o1, int[] o2) {
-//                for(int i = 0;i< o1.length;i++){
-//                    if(o1[i] > o2[i]){
-//                        return 1;
-//                    }else if(o1[i] < o2[i]){
-//                        return -1;
-//                    }
-//                }
-//                return 0;
-//            }
-//        });
-        Arrays.sort(ranges,(o1,o2)-> o1[0] > o2[0] ? 1 : -1);
+        Arrays.sort(ranges,new Comparator<int[]>(){
+            @Override
+            public int compare(int[] o1, int[] o2) {
+                for(int i = 0;i< o1.length;i++){
+                    if(o1[i] > o2[i]){
+                        return 1;
+                    }else if(o1[i] < o2[i]){
+                        return -1;
+                    }
+                }
+                return 0;
+            }
+        });
         for(int i = 0;i< ranges.length;i++){
 
             if(i > 0 && ranges[i-1][ranges[i].length - 1] >= ranges[i][ranges[i].length - 1]){
