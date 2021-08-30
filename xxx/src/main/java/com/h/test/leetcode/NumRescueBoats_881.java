@@ -54,14 +54,12 @@ public class NumRescueBoats_881 {
     public int numRescueBoats1(int[] people, int limit) {
         Arrays.sort(people);
         int l = 0,r = people.length-1,m = 0;
-        while (l<=r){
+        for(;l<=r;r--,m++){
             int sum = people[r] + people[l];
             while (sum <= limit && l<r){
                 l++;
                 sum += people[l];
             }
-            r--;
-            m++;
         }
         return m;
     }
