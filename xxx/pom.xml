@@ -7,6 +7,18 @@
   <groupId>com.cloud</groupId>
   <artifactId>xxx</artifactId>
   <version>1.0.0-SNAPSHOT</version>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>8</source>
+          <target>8</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
   <packaging>war</packaging>
 
   <name>xxx Maven Webapp</name>
@@ -23,6 +35,19 @@
       <artifactId>cloud-api-common</artifactId>
       <version>${project.version}</version>
     </dependency>
+
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-email</artifactId>
+      <version>1.4</version>
+    </dependency>
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-context-support</artifactId>
+          <version>5.2.7.RELEASE</version>
+          <scope>compile</scope>
+      </dependency>
+
   </dependencies>
 
 </project>
