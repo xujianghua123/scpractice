@@ -2,7 +2,7 @@ package com.h.test.t;
 
 import org.junit.Test;
 
-public class NTest {
+public class NullTest {
 
     private Integer age;
 
@@ -10,12 +10,12 @@ public class NTest {
 
     @Test
     public void test(){
-        NTest nTest = new NTest();
+        NullTest nullTest = new NullTest();
 
-        System.out.println(nTest.getAge());
-        nTest.setNum(nTest.getAge());
+        System.out.println(nullTest.getAge());
+        nullTest.setNum(nullTest.getAge());
 
-        System.out.println(nTest.getNum());
+        System.out.println(nullTest.getNum());
     }
 
     public Integer getAge() {

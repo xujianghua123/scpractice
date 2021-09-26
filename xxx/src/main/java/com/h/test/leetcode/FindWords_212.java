@@ -50,8 +50,6 @@ public class FindWords_212 {
     }
 
     private boolean findWords(char[][] board,boolean[][] isUsed,char[] chars,int index,int i,int j){
-
-
         if(chars[index] == board[i][j]){
             if(index == chars.length-1){
                 return true;
@@ -60,20 +58,16 @@ public class FindWords_212 {
         }else {
             return false;
         }
-
         boolean f1 = false,f2=false,f3=false,f4=false;
         if(i>0 && !isUsed[i-1][j]){
             f1 = findWords(board,isUsed,chars,index+1,i-1,j);
         }
-
         if(i<board.length-1 && !isUsed[i+1][j]){
             f2 = findWords(board,isUsed,chars,index+1,i+1,j);
         }
-
         if(j>0 && !isUsed[i][j-1]){
             f3 = findWords(board,isUsed,chars,index+1,i,j-1);
         }
-
         if(j<board[0].length-1 && !isUsed[i][j+1]){
             f4 = findWords(board,isUsed,chars,index+1,i,j+1);
         }
