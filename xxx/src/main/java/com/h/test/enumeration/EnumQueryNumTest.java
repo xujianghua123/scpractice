@@ -12,7 +12,7 @@ import java.util.Map;
 * @Author: xujianghua
 * @Date: 2021/7/23 17:42
 */
-public class EnumQueryTest {
+public class EnumQueryNumTest {
 
     @Test
     public void test() throws Exception {
