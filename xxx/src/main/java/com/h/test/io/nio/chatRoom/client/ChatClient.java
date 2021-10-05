@@ -1,4 +1,4 @@
-package com.h.test.io.netty.client;
+package com.h.test.io.nio.chatRoom.client;
 
 import javax.print.DocFlavor;
 import java.net.InetSocketAddress;

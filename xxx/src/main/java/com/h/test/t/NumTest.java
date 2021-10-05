@@ -1,4 +1,4 @@
-package com.h.test;
+package com.h.test.t;
 
 import org.junit.Test;
 

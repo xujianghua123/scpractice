@@ -1,4 +1,4 @@
-package com.h.test.io.netty.server;
+package com.h.test.io.nio.demo;
 
 import org.junit.Test;
 

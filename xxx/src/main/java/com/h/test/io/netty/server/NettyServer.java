@@ -1,13 +1,12 @@
 package com.h.test.io.netty.server;
 
 import io.netty.bootstrap.ServerBootstrap;
-import io.netty.channel.ChannelFuture;
-import io.netty.channel.ChannelInitializer;
-import io.netty.channel.ChannelOption;
-import io.netty.channel.EventLoopGroup;
+import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
+import io.netty.handler.codec.string.StringDecoder;
+import io.netty.handler.codec.string.StringEncoder;
 
 public class NettyServer {
 
@@ -30,8 +29,13 @@ public class NettyServer {
 
                         @Override
                         protected void initChannel(SocketChannel ch) throws Exception {
+                            ChannelPipeline pipeline = ch.pipeline();
+                            //加入解码器
+                            pipeline.addLast("decode",new StringDecoder());
+                            //加入编码器
+                            pipeline.addLast("encode",new StringEncoder());
                             //对workerGroup的SocketChannel设置处理器
-                            ch.pipeline().addLast(new NettyServerHandler());
+                            pipeline.addLast(new NettyServerHandler());
                         }
                     });
             System.out.println("netty server start。。");

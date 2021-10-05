@@ -1,4 +1,4 @@
-package com.h.test.io.netty.client;
+package com.h.test.io.nio.chatRoom.client;
 
 public class AClient {
     public static void main(String[] args) throws Exception{
