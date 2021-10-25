@@ -1,5 +1,7 @@
 package com.h.test.thread;
 
+import java.util.concurrent.TimeUnit;
+
 public class DeadLockTest {
 
     private static Object lock1 = new Object();
@@ -13,6 +15,7 @@ public class DeadLockTest {
                 synchronized (lock1){
                     try {
                         Thread.sleep(5000);
+                        wait(1, TimeUnit.SECONDS.hashCode());
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }

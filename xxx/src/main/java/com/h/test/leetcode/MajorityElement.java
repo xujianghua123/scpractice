@@ -2,12 +2,16 @@ package com.h.test.leetcode;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class MajorityElement {
 
     @Test
     public void test(){
-        int[] nums = {1,2,5,9,5,9,5,5,5};
-        System.out.println(this.majorityElement(nums));
+        int[] nums = {3,2,3};
+        System.out.println(this.majorityElement1(nums));
     }
 
     public int majorityElement(int[] nums) {
@@ -31,5 +35,27 @@ public class MajorityElement {
             }
         }
         return count > (nums.length/2) ? majority : -1;
+    }
+
+    public List<Integer> majorityElement1(int[] nums) {
+        List<Integer> resList = new ArrayList();
+        Arrays.sort(nums);
+        int n = nums.length/3;
+        int m = 0,cur = nums[0];
+        for(int i = 0;i < nums.length;i++){
+            if(nums[i] == cur){
+                m++;
+            } else{
+                if(m > n){
+                    resList.add(cur);
+                }
+                m = 1;
+                cur = nums[i];
+            }
+            if(i == nums.length -1 && m > n){
+                resList.add(cur);
+            }
+        }
+        return resList;
     }
 }

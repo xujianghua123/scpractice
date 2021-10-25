@@ -6,7 +6,7 @@ public class Quick {
 
     @Test
     public void test(){
-        int[] arr = new int[]{5,2,6,7,10,3,7,8,4,10,9,1,5};
+        int[] arr = new int[]{5,2,6,7,10,3,8,4,9,1};
         sort(arr);
         for(int n: arr){
             System.out.print(n + "\t");
