@@ -1,4 +1,4 @@
-package com.cloud.order.proxy;
+package com.cloud.order.client;
 
 /**
  * @author : xujianghua
