@@ -7,14 +7,10 @@ public class Quick {
     @Test
     public void test(){
         int[] arr = new int[]{5,2,6,7,10,3,8,4,9,1};
-        sort(arr);
+        sort(arr,0,arr.length-1);
         for(int n: arr){
             System.out.print(n + "\t");
         }
-    }
-
-    private void sort(int[] arr){
-        sort(arr,0,arr.length-1);
     }
 
     /**
