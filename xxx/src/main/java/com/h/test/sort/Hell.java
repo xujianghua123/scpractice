@@ -15,7 +15,7 @@ public class Hell {
         }
     }
 
-    private int[] sort(int[] arr){
+    private void sort(int[] arr){
 
         int gap = arr.length/RANGE;
 
@@ -31,7 +31,6 @@ public class Hell {
             }
             gap = gap/RANGE;
         }
-
-        return arr;
     }
+
 }
