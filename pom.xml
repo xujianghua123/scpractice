@@ -20,6 +20,9 @@
         <module>cloud-consumer-consul-order80</module>
         <module>cloud-sharding-test</module>
         <module>rocketMq</module>
+        <module>springdemo</module>
+        <module>spock</module>
+        <module>cloud-utils-common</module>
     </modules>
 
 

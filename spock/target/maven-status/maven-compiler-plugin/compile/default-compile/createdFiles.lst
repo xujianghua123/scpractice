@@ -1,0 +1,3 @@
+com\spock\entity\Order.class
+com\spock\service\SpockService.class
+com\spock\SpockApplication.class
